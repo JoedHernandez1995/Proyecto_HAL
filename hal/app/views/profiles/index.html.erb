@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Profiles</h1>
+<h1>Mi Perfil</h1>
 
 <table>
   <thead>
@@ -10,28 +10,28 @@
       <th>Profesion</th>
       <th>Pais</th>
       <th>Correo</th>
-      <th>User</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @profiles.each do |profile| %>
-      <tr>
-        <td><%= profile.nombre %></td>
-        <td><%= profile.edad %></td>
-        <td><%= profile.profesion %></td>
-        <td><%= profile.pais %></td>
-        <td><%= profile.correo %></td>
-        <td><%= profile.user %></td>
-        <td><%= link_to 'Show', profile %></td>
-        <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
-        <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <% if profile.user == current_user %>
+        <tr>
+          <td><%= profile.nombre %></td>
+          <td><%= profile.edad %></td>
+          <td><%= profile.profesion %></td>
+          <td><%= profile.pais %></td>
+          <td><%= profile.correo %></td>
+          <td><%= link_to 'Show', profile %></td>
+          <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Profile', new_profile_path %>
+<% if current_user.profile.nil? %>
+  <%= link_to 'New Profile', new_profile_path %>
+<% end %>
