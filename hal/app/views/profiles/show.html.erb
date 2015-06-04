@@ -26,8 +26,8 @@
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @profile.user %>
+  <strong>Avatar:</strong><br/>
+  <%= image_tag(current_user.avatar.url(:medium)) %>
 </p>
 
 <%= link_to 'Edit', edit_profile_path(@profile) %> |
