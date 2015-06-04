@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<h1>Revise Sus Datos</h1>
 
 <p>
   <strong>Nombre:</strong>
@@ -30,5 +30,5 @@
   <%= image_tag(current_user.avatar.url(:medium)) %>
 </p>
 
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+<%= link_to 'Aceptar', profiles_path, class: "button success" %>
+<%= link_to 'Volver a Editar', edit_profile_path(@profile), class: "button alert" %> 
