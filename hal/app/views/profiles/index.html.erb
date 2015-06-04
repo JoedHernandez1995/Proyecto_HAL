@@ -10,6 +10,7 @@
       <th>Profesion</th>
       <th>Pais</th>
       <th>Correo</th>
+      <th>Avatar</th>
       <th colspan="2"></th>
     </tr>
   </thead>
@@ -23,6 +24,7 @@
           <td><%= profile.profesion %></td>
           <td><%= profile.pais %></td>
           <td><%= profile.correo %></td>
+          <td><%= image_tag(current_user.avatar.url(:medium)) %></td>
           <td><%= link_to 'Show', profile %></td>
           <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
         </tr>
