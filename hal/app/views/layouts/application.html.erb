@@ -34,7 +34,10 @@
                 <a href="#">Generar Estadisticas</a>
               </li>
               <li>
-                <a href="#">Subir un Archivo de Datos</a>
+                <a href="<%= archivos_subir_archivos_path %>">Subir un Archivo de Datos</a>
+              </li>
+              <li>
+                <a href="<%= edit_user_registration_path %>">Editar Cuenta</a>
               </li>
               <li class="active"><a href="<%= destroy_user_session_path %>">Log Out</a></li>              
             <% else %>
