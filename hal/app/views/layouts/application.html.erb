@@ -9,7 +9,11 @@
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application" 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag "jquery-1.4.2.min", "rails" %>
+    <script src="http://github.highcharts.com/462cf4/highcharts.js"></script>
+    <script src="http://github.highcharts.com/462cf4/highcharts-more.js"></script>
     <%= csrf_meta_tags %>
+    <%= yield(:head) %>
   </head>
 
   <body>

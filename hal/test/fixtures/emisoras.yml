@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  top: 1
+  radio: MyString
+  fecha: 2015-06-11 00:23:49
+  visitas: 1
+
+two:
+  top: 1
+  radio: MyString
+  fecha: 2015-06-11 00:23:49
+  visitas: 1

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Top:</strong>
+  <%= @emisora.top %>
+</p>
+
+<p>
+  <strong>Radio:</strong>
+  <%= @emisora.radio %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @emisora.fecha %>
+</p>
+
+<p>
+  <strong>Visitas:</strong>
+  <%= @emisora.visitas %>
+</p>
+
+<%= link_to 'Edit', edit_emisora_path(@emisora) %> |
+<%= link_to 'Back', emisoras_path %>

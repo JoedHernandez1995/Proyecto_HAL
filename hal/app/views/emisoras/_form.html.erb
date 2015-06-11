@@ -1,0 +1,33 @@
+<%= form_for(@emisora) do |f| %>
+  <% if @emisora.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@emisora.errors.count, "error") %> prohibited this emisora from being saved:</h2>
+
+      <ul>
+      <% @emisora.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :top %><br>
+    <%= f.number_field :top %>
+  </div>
+  <div class="field">
+    <%= f.label :radio %><br>
+    <%= f.text_field :radio %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha %><br>
+    <%= f.datetime_select :fecha %>
+  </div>
+  <div class="field">
+    <%= f.label :visitas %><br>
+    <%= f.number_field :visitas %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
