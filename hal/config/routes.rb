@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  resources :emisoras
-
   get "archivos/subir_archivos"
 
   post "archivos/subir_archivos"
