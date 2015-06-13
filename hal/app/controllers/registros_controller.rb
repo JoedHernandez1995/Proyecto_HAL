@@ -53,7 +53,7 @@ class RegistrosController < ApplicationController
 
   def import
     Registro.import(params[:file])
-    redirect_to root_url, notice: "Registros actualizados."
+    redirect_to registros_url, notice: "Registros actualizados."
   end
 
   # DELETE /registros/1
@@ -74,6 +74,6 @@ class RegistrosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def registro_params
-      params.require(:registro).permit(:type, :channel, :h_inicio, :h_final, :location, :user)
+      params.require(:registro).permit(:media, :channel, :h_inicio, :h_final, :location, :user)
     end
 end
