@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  channel: MyString
+  h_inicio: 2015-06-12 21:19:44
+  h_final: 2015-06-12 21:19:44
+  location: MyString
+  user: MyString
+
+two:
+  type: 
+  channel: MyString
+  h_inicio: 2015-06-12 21:19:44
+  h_final: 2015-06-12 21:19:44
+  location: MyString
+  user: MyString
