@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20150613044504) do
     t.datetime "updated_at",             null: false
   end
 
-  add_index "profiles", ["user_id"], name: "fk_rails_31817e20d1", using: :btree
+  add_index "profiles", ["user_id"], name: "fk_rails_2a1c7ea368", using: :btree
 
   create_table "registros", force: :cascade do |t|
     t.string   "media",      limit: 255

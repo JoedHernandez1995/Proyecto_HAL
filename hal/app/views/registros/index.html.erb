@@ -10,6 +10,41 @@
 
 <h1>Listing Registros</h1>
 
+<script type="text/javascript" charset="utf-8">
+  $(function() {
+    var chart = new Highcharts.Chart({
+      chart:{
+        renderTo: "registros_chart",
+        type: "column"
+      },
+      title:{
+        text:"Estaciones mas Sintonizadas"
+      },
+      xAxis:{
+        type:"datetime"
+      },
+      yAxis:{
+        title:{
+          text: "Visitas"
+        },
+        column: {
+        pointPadding: 0,
+        borderWidth: 0,
+        groupPadding: 0,
+        shadow: false
+    }
+      },
+      series:[{
+         pointInterval: <%= 1.day * 1000 %>,
+         pointStart: <%= 3.weeks.ago.to_i * 1000 %>,
+        data: <%= Registro.pluck(:channel) %>
+      }]
+       
+    });
+  });
+</script>
+<div id="registros_chart" style="width:660px; height:400px;"></div>
+
 <table>
   <thead>
     <tr>
