@@ -15,12 +15,13 @@ class Registro < ActiveRecord::Base
       :channel,
       :media,
       :location,
-      :starts_with
+      :user
     ]
   )
 
   scope :media, -> (media) {where media: media}
   scope :channel, -> (channel) {where channel: channel}
   scope :location, -> (location) {where location: location}
-  scope :starts_with, -> (user) {where("name like ?", "#{user}%")} 
+  scope :user, -> (user) {where user: user}
+   
 end
