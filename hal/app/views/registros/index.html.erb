@@ -4,49 +4,62 @@
   <h3>Import a CSV File</h3>
   <%= form_tag import_registros_path, multipart: true do %>
     <%= file_field_tag :file %>
-    <%= submit_tag "Import CSV" %>
+    <%= submit_tag "Import CSV",class: "button round" %>
   <% end %>
 </div>
 
-<h1>Listing Records</h1>
-
+<h1>Search</h1>
 <%= form_for_filterrific @filterrific do |f| %>
-  <div>
-    Media
-    <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
-    <%= f.text_field(
-      :media,
-      class: 'filterrific-periodically-observed'
-    ) %>
-  </div>
-  
-  <div>
-    Location
-    <%= f.text_field(
-      :location,
-      class: 'filterrific-periodically-observed'
-    ) %>
+  <div class="row">
+    <div class="medium-3 columns">
+      <div>
+        <span class="secondary radius label"> <b> Media </b> </span>
+        <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
+        <%= f.text_field(
+          :media,
+          class: 'filterrific-periodically-observed'
+        ) %>
+      </div>
+    </div>
 
-  </div>
+    <div class="medium-3 columns">
+      <div>
+        <span class="secondary radius label"> <b> Channel </b> </span>
+        <%= f.text_field(
+          :channel,
+          class: 'filterrific-periodically-observed'
+        ) %>
+      </div>
+    </div>
 
-  <div>
-    User
-    <%= f.text_field(
-      :starts_with,
-      class: 'filterrific-periodically-observed'
-    ) %>
+    <div class="medium-3 columns">
+      <div>
+        <span class="secondary radius label"> <b> Location </b> </span>
+        <%= f.text_field(
+          :location,
+          class: 'filterrific-periodically-observed'
+        ) %>
+      </div>
+    </div>
 
-  </div>
-  <div>
-    <%= link_to(
-      'Reset filters',
-      reset_filterrific_url,
-    ) %>
+    <div class="medium-3 columns">
+      <div>
+        <span class="secondary radius label"> <b> User </b> </span>
+        <%= f.text_field(
+          :starts_with,
+          class: 'filterrific-periodically-observed'
+        ) %>
+      </div>
+    </div>
+
   </div>
   <%# add an automated spinner to your form when the list is refreshed %>
   <%= render_filterrific_spinner %>
-  <%= f.submit 'Filtrar'%>
-<% end %>
+  <%= f.submit 'Filtrar', class: "button success"%>
+  <%= link_to('Reset filters',reset_filterrific_url,class: "button secondary") %>
+  <% end %>
+
+<h1>Listing Records</h1>
 
 <%= render(
   partial: 'registros/list',
@@ -55,4 +68,4 @@
 
 <br>
 
-<%= link_to 'New Registro', new_registro_path %>
+<%= link_to 'New Registro', new_registro_path, class: "button secondary" %>
