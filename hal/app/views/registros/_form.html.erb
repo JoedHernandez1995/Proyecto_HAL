@@ -11,14 +11,37 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :media %><br>
-    <%= f.text_field :media %>
+  <div class="row">
+    <div class="medium-6 columns">
+      <div class="field">
+        <%= f.label :media %><br>
+        <%= f.text_field :media %>
+      </div>
+    </div>
+
+    <div class="medium-6 columns">
+      <div class="field">
+        <%= f.label :channel %><br>
+        <%= f.text_field :channel %>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :channel %><br>
-    <%= f.text_field :channel %>
+  <div class="row">
+      <div class="medium-6 columns">
+        <div class="field">
+          <%= f.label :user %><br>
+          <%= f.text_field :user %>
+        </div>
+    </div>
+    <div class="medium-6 columns">
+      <div class="field">
+        <%= f.label :location %><br>
+        <%= f.text_field :location %>
+      </div>
+    </div>
   </div>
+
+
   <div class="field">
     <%= f.label :h_inicio %><br>
     <%= f.time_select :h_inicio %>
@@ -26,14 +49,6 @@
   <div class="field">
     <%= f.label :h_final %><br>
     <%= f.time_select :h_final %>
-  </div>
-  <div class="field">
-    <%= f.label :location %><br>
-    <%= f.text_field :location %>
-  </div>
-  <div class="field">
-    <%= f.label :user %><br>
-    <%= f.text_field :user %>
   </div>
   <div class="actions">
     <%= f.submit "CREAR", class: "button" %>
