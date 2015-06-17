@@ -14,14 +14,14 @@
   <div class="row">
     <div class="medium-6 columns">
       <div class="field">
-        <%= f.label :media %><br>
+        <%= f.label "Medio" %><br>
         <%= f.text_field :media %>
       </div>
     </div>
 
     <div class="medium-6 columns">
       <div class="field">
-        <%= f.label :channel %><br>
+        <%= f.label "Canal" %><br>
         <%= f.text_field :channel %>
       </div>
     </div>
@@ -29,27 +29,28 @@
   <div class="row">
       <div class="medium-6 columns">
         <div class="field">
-          <%= f.label :user %><br>
+          <%= f.label "Usuario" %><br>
           <%= f.text_field :user %>
         </div>
     </div>
     <div class="medium-6 columns">
       <div class="field">
-        <%= f.label :location %><br>
+        <%= f.label "Pais" %><br>
         <%= f.text_field :location %>
       </div>
     </div>
   </div>
 
-
   <div class="field">
-    <%= f.label :h_inicio %><br>
+    <%= f.label "Hora de Inicio" %>
     <%= f.time_select :h_inicio %>
   </div>
+
   <div class="field">
-    <%= f.label :h_final %><br>
+    <%= f.label "Hora de finalizacion" %><br>
     <%= f.time_select :h_final %>
   </div>
+ 
   <div class="actions">
     <%= f.submit "CREAR", class: "button" %>
   </div>
