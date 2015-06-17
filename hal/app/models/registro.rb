@@ -10,8 +10,17 @@ class Registro < ActiveRecord::Base
     end # end CSV.foreach
   end # end self.import(file)
 
+  filterrific(
+    available_filters: [
+      :channel,
+      :media,
+      :location,
+      :starts_with
+    ]
+  )
+
   scope :media, -> (media) {where media: media}
   scope :channel, -> (channel) {where channel: channel}
   scope :location, -> (location) {where location: location}
-  scope :starts_with, -> (user) {where("name like ?", "#{user}%")}
+  scope :starts_with, -> (user) {where("name like ?", "#{user}%")} 
 end

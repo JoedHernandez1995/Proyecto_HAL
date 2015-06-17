@@ -4,11 +4,22 @@ class RegistrosController < ApplicationController
   # GET /registros
   # GET /registros.json
   def index
-    @registros = Registro.media("MILDA")
-    @registros = @registros.media(params[:media]) if params[:media].present?
-    @registros = @registros.channel(params[:channel]) if params[:channel].present?
-    @registros = @registros.location(params[:location]) if params[:location].present?
-    @registros = @registro.starts_with(params[:starts_with]) if params[:starts_with].present?
+    @filterrific = initialize_filterrific(
+    Registro,
+    params[:filterrific]
+    ) or return
+
+    @registros = @filterrific.find
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+    #@registros = Registro.where(nil)
+    #@registros = @registros.media(params[:media]) if params[:media].present?
+    #@registros = @registros.channel(params[:channel]) if params[:channel].present?
+    #@registros = @registros.location(params[:location]) if params[:location].present?
+    #@registros = @registro.starts_with(params[:starts_with]) if params[:starts_with].present?
   end
 
   # GET /registros/1

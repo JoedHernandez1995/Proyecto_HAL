@@ -10,35 +10,48 @@
 
 <h1>Listing Records</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Media</th>
-      <th>Channel</th>
-      <th>H inicio</th>
-      <th>H final</th>
-      <th>Location</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<%= form_for_filterrific @filterrific do |f| %>
+  <div>
+    Media
+    <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
+    <%= f.text_field(
+      :media,
+      class: 'filterrific-periodically-observed'
+    ) %>
+  </div>
+  
+  <div>
+    Location
+    <%= f.text_field(
+      :location,
+      class: 'filterrific-periodically-observed'
+    ) %>
 
-  <tbody>
-    <% @registros.each do |registro| %>
-      <tr>
-        <td><%= registro.media %></td>
-        <td><%= registro.channel %></td>
-        <td><%= registro.h_inicio %></td>
-        <td><%= registro.h_final %></td>
-        <td><%= registro.location %></td>
-        <td><%= registro.user %></td>
-        <td><%= link_to 'Show', registro %></td>
-        <td><%= link_to 'Edit', edit_registro_path(registro) %></td>
-        <td><%= link_to 'Destroy', registro, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  </div>
+
+  <div>
+    User
+    <%= f.text_field(
+      :starts_with,
+      class: 'filterrific-periodically-observed'
+    ) %>
+
+  </div>
+  <div>
+    <%= link_to(
+      'Reset filters',
+      reset_filterrific_url,
+    ) %>
+  </div>
+  <%# add an automated spinner to your form when the list is refreshed %>
+  <%= render_filterrific_spinner %>
+  <%= f.submit 'Filtrar'%>
+<% end %>
+
+<%= render(
+  partial: 'registros/list',
+  locals: { registros: @registros }
+) %>
 
 <br>
 
