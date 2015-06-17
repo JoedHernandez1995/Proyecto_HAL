@@ -1,0 +1,29 @@
+<div id="filterrific_results">
+
+
+
+  <table>
+    <tr>
+      <th>Media</th>
+      <th>Channel</th>
+      <th>H_Inicio</th>
+      <th>H_Final</th>
+      <th>Location</th>
+      <th>User</th>
+    </tr>
+    <% registros.each do |reg| %>
+      <tr>
+        <td><%= reg.media %></td>
+        <td><%= reg.channel %></td>
+        <td><%= reg.h_inicio %></td>
+        <td><%= reg.h_final %></td>
+        <td><%= reg.location %></td>
+        <td><%= reg.user %></td>
+
+        <td><%= link_to('Ver', registro_path(reg)) %></td>
+        <td><%= link_to('Editar', edit_registro_path(reg)) %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
