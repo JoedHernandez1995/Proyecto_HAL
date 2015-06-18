@@ -1,1 +1,7 @@
-You are logged in!
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+
+<%= pie_chart Registro.group(:media).count %>
+
+<%= column_chart @results %>
+
+<%= line_chart Registro.group(:media).group(:h_inicio).count %>

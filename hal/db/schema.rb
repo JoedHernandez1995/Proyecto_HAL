@@ -22,11 +22,9 @@ ActiveRecord::Schema.define(version: 20150613044504) do
     t.integer  "user_id",    limit: 4
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
-    t.string   "picture",    limit: 255
-    t.string   "image",      limit: 255
   end
 
-  add_index "profiles", ["user_id"], name: "fk_rails_7ea1995573", using: :btree
+  add_index "profiles", ["user_id"], name: "fk_rails_418f2df0fb", using: :btree
 
   create_table "registros", force: :cascade do |t|
     t.string   "media",      limit: 255
