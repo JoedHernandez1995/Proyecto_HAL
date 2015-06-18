@@ -23,5 +23,5 @@ class Registro < ActiveRecord::Base
   scope :channel, -> (channel) {where channel: channel}
   scope :location, -> (location) {where location: location}
   scope :user, -> (user) {where user: user}
-   
+     
 end
