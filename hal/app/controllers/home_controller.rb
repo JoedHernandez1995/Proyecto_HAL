@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 	def index
 		
-		query = "SELECT channel,count(*) FROM registros where media = 'Radio' GROUP BY channel ORDER BY count(*) DESC LIMIT 5"
+		query = "SELECT channel,count(*) FROM registros GROUP BY channel ORDER BY count(*) DESC LIMIT 5"
 		@results = ActiveRecord::Base.connection.execute(query)
 	end
 
