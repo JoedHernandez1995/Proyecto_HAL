@@ -2,4 +2,6 @@
 
 <%= pie_chart Registro.group(:media).count %>
 
-<%= bar_chart @results %>
+<%= column_chart @results %>
+
+<%= line_chart Registro.group(:media).group(:h_inicio).count %>
