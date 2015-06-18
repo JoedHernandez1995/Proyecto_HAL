@@ -36,14 +36,14 @@
             useHTML: true
         },
         column: {
-          pointPadding: 0,
-          borderWidth: 0,
-          groupPadding: 0,
-          shadow: false
+            pointPadding: 0,
+            borderWidth: 0,
+            groupPadding: 0,
+            shadow: false
         }
       },
       series:[{
-            name: 'Radio',
+           /* name: 'Radio',
             data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
 
         }, {
@@ -54,12 +54,16 @@
             name: 'Internet',
             data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
         }, {
-            name: 'Internet2',
+            name: 'Pelicula',
             data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
         }, {
-            name: 'Internet3',
+            name: 'Prensa',
             data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
-        
+        */
+          
+       pointInterval: <%= 1.day * 1000 %>,
+        pointStart: <%= 3.weeks.ago.to_i * 1000 %>,
+        data: <%= Registro.parse(channel) %>
       }]
        
     });
