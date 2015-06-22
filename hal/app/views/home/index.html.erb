@@ -2,6 +2,6 @@
 
 <%= pie_chart Registro.group(:media).count %>
 
-<%= column_chart @results %>
+<%= column_chart Registro.group(:channel).order("count_all").reverse_order.limit(5).count %>
 
 <%= line_chart Registro.group(:media).group(:h_inicio).count %>
