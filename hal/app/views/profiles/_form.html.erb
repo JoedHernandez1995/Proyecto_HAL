@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :pais %><br>
-    <%= f.text_field :pais %>
+    <%= f.select :pais, CountryStateSelect::Constant::COUNTRIES, {}, id: 'country_id' %>
   </div>
   <div class="actions">
     <%= f.submit "Aceptar", class: "button" %>

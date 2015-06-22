@@ -35,6 +35,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'foundation-rails', '5.4.3.1'
 # Devise para autenticacion
 gem 'devise'
+#Para desplegar los paises cuando se crea perfil
+gem 'country_state_select'
 
 #gem 'paperclip', '~> 3.5.3'
 gem 'paperclip', github: 'thoughtbot/paperclip'
